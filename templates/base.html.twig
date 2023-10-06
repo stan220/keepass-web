@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}KeepassXC Web Viewer{% endblock %}</title>
+
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>🔑</text></svg>"/>
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+        <!--    <link rel="stylesheet" href="./bootstrap.min.css">-->
+        <link rel="stylesheet" href="https://unpkg.com/bootcatch-themes@2.4.0/dist/solitude/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+
+        <style>
+            .btn, .navbar, .card, .progress {
+                margin-bottom: 1rem !important;
+            }
+            .navbar .btn {
+                margin-bottom: 0 !important;
+            }
+        </style>
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+
+        <hr/>
+
+        <div class="container">
+            <p>
+                <span class="badge badge-primary">KeepassXC Web Viewer </span>
+                <span class="badge badge-dark">© {{ 'now' | date('Y') }}</span>
+            </p>
+        </div>
+
+    </body>
+</html>
